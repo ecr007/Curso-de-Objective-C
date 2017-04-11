@@ -11,40 +11,172 @@
 
 # Unidades para guardar información con Objective-C
 	- Variables y constantes en Objective-C 05:16
-	- Especificadores en Objective-C 05:14
-	- El puntero en Objective-C 03:36
-	- Ejemplo de uso de puntero 05:08
-	- Operadores matemáticos en Objective-C 05:21
+
+		int x;
+		x = 5;
+		NSLog(@"El numero es: %i", x);
+
+		// En Swift no es necesario el @
+
+		Para definir constantes se usa la palabra reservada
+		#define CONSTATE = VALOR;
+
+	- Especificadores en Objective-C
+
+		Son los tipos de datos que le especificaremos al lenguaje que debe pintar.
+
+		int => %i
+		float => %f
+		char => %c
+		char[n] => %s
+		string => %@ || %s
+		long => %ld
+		long long => %lld
+		double => %lf
+		punteros => *
+
+	- El puntero en Objective-C
+
+		Un puntero es en palabras llanas el que que apunta la memoria de otra variable o objeto
+		o lo que sea
+
+		int VAR1 = 5;
+		int * VAR2 = &VAR1;
+
+		Para declarar un puntero se coloca * delante de la variable
+		Para asignar la posición en memoria de una variable se coloca & delante de esta
+
+
+	- Ejemplo de uso de puntero
+
+		* scanf("especificador",direccion de memoria donde se guardara) -> Esta funcion lo que
+		hace es guardar una entrada en la posicion de memoria de una variable
+
+		NSLog(@"Con solo dos decimales %.2f",VarDouble) -> con ese .2 lo que hace es permitir esa
+		cantidad de decimales solamente.
+
+	- Operadores matemáticos en Objective-C
+
+		OK, los de siempre
 
 # Estructuras en Objective-C
-	- Bloques o grupos de variables 03:30
+	- Bloques o grupos de variables
+
+	Son estructuras "Struct" que me permiten tener funcionalidades aisladas
+
+	Struct cordenadas{
+		float latitud;
+		float longitud;
+	};
+
+	// Usar, instancion el struct
+	Struct cordenadas instancia;
+
+	instacia.latiud = 6.00;
+	instancia.longitud = 30.0490394;
+
+	// Tambien se puede usar typedef (Definicion de tipo)
+
+	typedef Struct{
+		float latitud;
+		float longitud;
+	} NAMESTRUCT;
+
+	NameStruct ins;
+	ins.latitud = 34.3434;
+	ins.longitud = 34.45454656;
+
 
 # Condicionales en Objective-C
-	- Bifurcaciones y bucles en Objective-C 01:36
-	- Estructuras de control: IF 06:37
-	- Estructuras de control: SWITCH 04:10
-	- Estructuras de control: FOR 03:24
-	- Estructuras de control: WHILE y DO... WHILE 04:03
+	- Bifurcaciones y bucles en Objective-C
+
+		Condiciones if if-elese switch
+		Bucles while for do while
+
+	- Estructuras de control: IF
+		OK
+	- Estructuras de control: SWITCH
+		OK
+	- Estructuras de control: FOR
+		OK
+	- Estructuras de control: WHILE y DO... WHILE
+		OK
 
 # Programación orientada a objetos en Objective-C
-	- Conceptos de programación orientada a objetos 05:30
-	- Explicación sobre la programación orientada a objetos 06:15
-	- Objeto y clase en Objective-C 02:46
+	- Conceptos de programación orientada a objetos
+
+		Explicación de las clases
+
+	- Explicación sobre la programación orientada a objetos
+
+		Explicación de las clases, Mas conceptos
+
+	- Objeto y clase en Objective-C
+
+		Mas Explicación
+
 	- Herencia con Objective-C 03:47
-	- Las Clases en Objective-C 02:55
+
+		Mas Explicación
+
+	- Las Clases en Objective-C
+		OK
+
 	- Los métodos para cada clase 01:32
 	- Los mensajes entre objetos 01:41
 	- Tipos de datos en Objective-C 02:16
-	- Frameworks en Objective-C
-	- Aprende a tu ritmo
-	- Framework Foundation 04:37
-	- Framework NSObject 03:18
-	- Framework NSString 06:03
-	- Framework NSMutableString 03:07
-	- Framework NSArray 03:33
+
+# Frameworks en Objective-C
+	- Framework Foundation
+
+	- Framework NSObject
+
+		Es el objeto principal
+
+	- Framework NSString
+
+		Es la clase que se encarga de de gestionar las cadenas
+
+		NSString * NomVar = @"Valor";
+
+		El tamaño de un string lo obtengo de la siguiente manera:
+
+		NSLog(@"Tamaño => %lu",(usigned long)NomVar.lenght);
+
+		// Si te fijas el tamaño es un numero demacionado grande y no es un entero
+		// Tambien se puede castear a un entero, pero por seguridad se hace con %lu y (usingned long)
+
+	- Framework NSMutableString
+
+		Esta clase se usa para interactuar aun mas con las cadenas, por ejemplo concatenar un valor
+
+		NSMutableString * VarName = [[NSMutableString alloc] initWithString: @"Valor"];
+
+		// Concatenamos
+		[VarName appendString: @" Mas Texto OK !!"];
+
+		El Mutable se le agrega a las clases para que estas puedan mutar.
+		Ej: NSMutableArray
+
+	- Framework NSArray
+
+		Es la clase que me permite manejar arreglos en swift
+
+		ej: NSArray * frutas = @[@"Mango", @"Piña", @"Melon"];
+
+		Si quiero agregar un un array que se pueda gestionar lo mutamos
+
+		Ej:
+
+		NSMutableArray * frutasOK = [[NSMutableArray alloc] initWithObject: @"Mango", @"Piña", @"Melon"];
+
+		// Agregamos informacion
+		[frutasOK addObject: @"Cereza"];
+
 
 # La aplicación móvil en Objective-C
-	- Nuestra primera app con Xcode 07:34
+	- Nuestra primera app con Xcode
+
 	- Storyboard de nuestra app 02:47
 
 # Patrón de diseño estructural con Objective-C
